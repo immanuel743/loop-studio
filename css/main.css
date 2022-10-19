@@ -8,15 +8,10 @@
 
 html {
   box-sizing: border-box;
-  font-size: 50%;
+  font-size: 62.5%;
   scroll-behavior: smooth;
 }
-@media screen and (min-width: 37.5em) {
-  html {
-    font-size: 62.5%;
-  }
-}
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 47.5em) {
   html {
     font-size: 75%;
   }
