@@ -1,0 +1,244 @@
+.nav {
+  // margin: 4rem 0 ;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 5rem 1rem 0;
+    margin-bottom: 8rem;
+    @media screen and (max-width: 600px) {
+      padding: 1rem 0;
+    }
+  }
+  &__logo {
+    width: 15rem;
+    padding: 1rem;
+  }
+  &__items {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 60%;
+    @media screen and (max-width: 600px) {
+      position: absolute;
+      top: 0;
+      flex-direction: column;
+      background-color: $Black;
+      padding: 1rem 2rem;
+      align-items: flex-start;
+      width: 0%;
+      display: none;
+      height: 100vh;
+      justify-content: center;
+    }
+    &--head {
+      display: none;
+      @media screen and(max-width:600px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        top: -20rem;
+        & .close {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+    & li {
+      // margin: 0 1rem;
+      @media screen and (max-width: 600px) {
+        margin: 1rem 0;
+      }
+      & a {
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: $White;
+
+        @media screen and (max-width: 600px) {
+          text-transform: uppercase;
+          font-size: 2rem;
+          letter-spacing: 0.5rem;
+          &:hover {
+            color: $VeryDarkGray;
+            transform: scale(1.1);
+            display: block;
+            transition: color 0.5s, transform 1s, ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+.hamburger {
+  display: none;
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+}
+.mobile--active {
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    transition: width 0.5s ease-in-out;
+  }
+}
+.card {
+  max-width: 40rem;
+  height: 13rem;
+  width: 100%;
+  padding: 1rem 1.8rem;
+  margin: 2rem auto;
+  position: relative;
+  color: $White;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  &:hover {
+    // filter: brightness(0.2);
+    // filter: grayscale(60);
+    filter: hue-rotate(360deg);
+    // filter: opacity(90%);
+    transition: all 1s ease;
+    color: $Black;
+    text-shadow: 3px 3px 1px $VeryDarkGray;
+    font-weight: 800;
+  }
+  // filter: contrast(1);
+  // filter: drop-shadow(100);
+  @include respond($phone) {
+    max-width: 20rem;
+    height: 35rem;
+    // background-size: contain;
+  }
+
+  &__body {
+    // padding-top: 6rem;
+    // background-color: #fff;
+    position: absolute;
+    bottom: 1rem;
+    z-index: 3;
+    @include respond($phone) {
+      bottom: 1.5rem;
+    }
+    & h1 {
+      text-align: left;
+      text-transform: uppercase;
+      width: 60%;
+      @include respond($phone) {
+        width: 80%;
+      }
+    }
+  }
+  &--1 {
+    background-image: url(../images/mobile/image-deep-earth.jpg);
+    @include respond($phone) {
+      background-image: url(../images/desktop/image-deep-earth.jpg);
+    }
+  }
+  &--2 {
+    background-image: url(../images/mobile/image-night-arcade.jpg);
+    @include respond($phone) {
+      background-image: url(../images/desktop/image-night-arcade.jpg);
+    }
+  }
+  &--3 {
+    background-image: url(../images/mobile/image-soccer-team.jpg);
+    @include respond($phone) {
+      background-image: url(../images/desktop/image-soccer-team.jpg);
+    }
+  }
+  &--4 {
+    background-image: url(../images/mobile/image-grid.jpg);
+    @include respond($phone) {
+      background-image: url(../images/desktop/image-grid.jpg);
+    }
+  }
+  &--5 {
+    background-image: url(../images/mobile/image-from-above.jpg);
+    @include respond($phone) {
+      background-image: url(../images/desktop/image-from-above.jpg);
+    }
+  }
+  &--6 {
+    background-image: url(../images/mobile/image-pocket-borealis.jpg);
+    @include respond($phone) {
+      background-image: url(../images/desktop/image-pocket-borealis.jpg);
+    }
+  }
+  &--7 {
+    background-image: url(../images/mobile/image-curiosity.jpg);
+    @include respond($phone) {
+      background-image: url(../images/desktop/image-curiosity.jpg);
+    }
+  }
+  &--8 {
+    background-image: url(../images/mobile/image-fisheye.jpg);
+    @include respond($phone) {
+      background-image: url(../images/desktop/image-fisheye.jpg);
+    }
+  }
+}
+
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.8rem 1.8rem;
+  border: 2px solid $VeryDarkGray;
+  display: block;
+  color: $Black;
+  font-size: 1.4rem;
+  letter-spacing: 0.5rem;
+  margin: 0 auto;
+  text-align: center;
+  width: 15rem;
+  background-color: $White;
+  &:hover {
+    outline: none;
+    background-color: $Black;
+    color: $White;
+    transition: background-color 0.5s ease-in-out;
+    // border: none;
+  }
+  &--top {
+    display: none;
+    @include respond($tab-port) {
+      display: block;
+    }
+  }
+  &--bottom {
+    @include respond($tab-port) {
+      display: none;
+    }
+  }
+}
+.copy {
+  color: $DarkGray;
+  text-align: center;
+  @include respond($tab-port) {
+    text-align: end;
+  }
+}
+
+.top {
+  background-color: goldenrod;
+  height: 5rem;
+  font-size: 1.6rem;
+  width: 5rem;
+  border-radius: 50%;
+  color: #fff;
+  border: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 0;
+  display: none;
+  z-index: 1000;
+  &:hover {
+    background-color: lightblue;
+    color: $Black;
+    transition: color 0.5s, background-color 0.7s, ease-in-out;
+  }
+}
